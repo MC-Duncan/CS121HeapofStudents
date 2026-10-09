@@ -11,7 +11,7 @@ class Dates {
     - int day
     - int year
 
-    + Date()
+    + Dates()
     + void init(dateString)
     + void printDate()
 }
@@ -44,16 +44,22 @@ class Student {
     + string getLastName()
     + int getCreditHours() 
 }
+
+Student --> Address
+Student --> Dates
 ```
 
 ## Dates::Dates()
 ```
-
+  set dateString to ""
+  set month to 0
+  set day to 0
+  set year to 0
 ```
 
 ## void Dates::init(dateString)
 ```
-
+  
 ```
 
 ## void Dates::printAddress()
@@ -63,17 +69,25 @@ class Student {
 
 ## Address::Address()
 ```
-
+  set street to ""
+  set city to ""
+  set state to ""
+  set zip to ""
 ```
 
 ## void Address::init(street, city, state, zip)
 ```
-
+  set Address::street to street
+  set Address::city to city
+  set Address::state to state
+  set Address::zip to zip
 ```
 
 ## void Address::printAddress()
 ```
-
+  print street and new line
+  print city, state
+  print zip and new line
 ```
 
 ## Student::Student()
