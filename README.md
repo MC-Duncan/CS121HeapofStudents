@@ -45,3 +45,55 @@ class Student {
     + int getCreditHours() 
 }
 ```
+
+## Dates::Dates()
+```
+
+```
+
+## void Dates::init(dateString)
+```
+
+```
+
+## void Dates::printAddress()
+```
+
+```
+
+## Address::Address()
+```
+
+```
+
+## void Address::init(street, city, state, zip)
+```
+
+```
+
+## void Address::printAddress()
+```
+
+```
+
+## Student::Student()
+```
+
+```
+
+## Student::~Student()
+```
+
+```
+
+## void Student::init(studentString)
+```
+
+```
+
+## void Student::printStudent()
+```
+
+```
+
+
