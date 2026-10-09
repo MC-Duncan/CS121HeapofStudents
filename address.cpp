@@ -1,7 +1,7 @@
 #include "address.h"
 #include <iostream>
 
-Address:Address(){
+Address::Address(){
   street = "";
   city = "";
   state = "";

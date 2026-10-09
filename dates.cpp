@@ -1,5 +1,7 @@
 #include "dates.h"
 #include <iostream>
+#include <sstream>
+#include <string>
 
 Dates::Dates(){
   month = 1;
@@ -7,29 +9,33 @@ Dates::Dates(){
   year = 2000;
 } // end constructor
 
-void Dates::init(std::string dateString);
+void Dates::init(std::string dateString){
   // make a stringstream
-  std::stringstream converter;
-  std::string sMonth;
-  std::string sDay;
-  std::string sYear;
+  Dates::dateString = dateString;
+  std::stringstream ss;
+  std::string tMonth;
+  std::string tDay;
+  std::string tYear;
+  
+  ss.clear();
+  ss.str(Dates::dateString);
 
   // convert to temp strings
-  converter.str(dateString);
-  getline(converter, sMonth, '/');
-  getline(converter, sDay, '/');
-  getline(converter, sYear, '/');
+  getline(ss, tMonth, '/');
+  getline(ss, tDay, '/');
+  getline(ss, tYear, '/');
+
+  ss.clear();
+  ss.str("");
 
   // convert to ints
-  converter.clear();
-  converter.str("");
-
-  converter << sDay << " " << sMonth << " " << sYear;
-  converter >> month >> day >> year;
+  std::stringstream converter;
+  ss << tDay << " " << tMonth << " " << tYear;
+  ss >> month >> day >> year;
 } // end init
 
 void Dates::printDate(){
-  std::string months[] = {"Null", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December};
+  std::string months[] = {"Null", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
   std::cout << months[month] << " ";
   std::cout << day << ", " << year << std::endl;
 } // end printDate

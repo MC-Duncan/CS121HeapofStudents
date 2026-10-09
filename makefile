@@ -1,11 +1,11 @@
-heapStudents: main.o date.o address.o student.o
-	g++ -g main.o address.o student.o -o heapStudents
+heapStudents: main.o dates.o address.o student.o
+	g++ -g main.o dates.o address.o student.o -o heapStudents
 
-main.o: main.cpp date.h
+main.o: main.cpp dates.h address.h
 	g++ -g -c main.cpp
 
-date.o: date.h date.cpp
-	g++ -g -c date.cpp
+dates.o: dates.h dates.cpp
+	g++ -g -c dates.cpp
 
 address.o: address.h address.cpp
 	g++ -g -c address.cpp

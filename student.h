@@ -10,16 +10,18 @@ class Student{
     std::string studentString;
     std::string firstName;
     std::string lastName;
-    Date* dob;
-    Date* expectedGrad;
+    Dates* dob;
+    Dates* expectedGrad;
     Address* address;
     int creditHours;
 
   public:
     Student();
+    Student(std::string studentString);
     ~Student();
     void init(std::string studentString);
     void printStudent();
+    std::string getLastFirst();
 }; // end class def
 
 #endif
