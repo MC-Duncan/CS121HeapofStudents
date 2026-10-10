@@ -1,5 +1,6 @@
 #include "address.h"
 #include <iostream>
+#include <sstream>
 
 Address::Address(){
   street = "";
@@ -15,8 +16,12 @@ void Address::init(std::string street, std::string city, std::string state, std:
   Address::zip = zip;
 } // end init
 
+std::string Address::getAddressStr() {
+  std::stringstream ss;
+  ss << street << std::endl << city << ", " << state << "  " << zip;
+  return ss.str();
+}
+
 void Address::printAddress(){
-  std::cout << street << std::endl;
-  std::cout << city << " " << state << ", ";
-  std:: cout << zip << std::endl;
+   std::cout << getAddressStr() << std::endl;
 } // end printAddress

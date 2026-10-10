@@ -13,6 +13,7 @@ class Dates{
   public:
     Dates();
     void init(std::string dateString);
+    std::string getDateStr();
     void printDate();
 }; // end class def
 

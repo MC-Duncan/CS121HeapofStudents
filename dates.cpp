@@ -30,12 +30,17 @@ void Dates::init(std::string dateString){
 
   // convert to ints
   std::stringstream converter;
-  ss << tDay << " " << tMonth << " " << tYear;
-  ss >> month >> day >> year;
+  converter << tMonth << " " << tDay << " " << tYear;
+  converter >> month >> day >> year;
 } // end init
 
-void Dates::printDate(){
+std::string Dates::getDateStr() {
+  std::stringstream ss;
   std::string months[] = {"Null", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-  std::cout << months[month] << " ";
-  std::cout << day << ", " << year << std::endl;
+  ss << months[month] << " " << std::to_string(day) << ", " << std::to_string(year);
+  return ss.str();
+}
+
+void Dates::printDate(){
+  std::cout << getDateStr() << std::endl;
 } // end printDate
